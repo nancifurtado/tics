@@ -1,0 +1,155 @@
+html * {
+    margin: 0px;
+    max-width: 100%;
+    box-sizing: border-box; /* para definir depois os tamanhos height das divs header, sobre, portifolio, contato */
+}
+
+body {
+    background-image: url('../img/fundo.jpg');
+    background-size: auto 100vh;  
+    font-family: 'Philosopher', sans-serif;  
+    color: #f7f9f9;
+}
+
+header {
+    height: 100vh;
+
+    display: flex; /* para alinhar o banner */
+    align-items: center; /* alinhamento vertical */
+    justify-content: center; /* alinhamento horizontal */
+}
+
+.menu {    
+    background-color: #116FBD;    
+    position: fixed; /*para que o menu fique fixo, mesmo qdo rolar a página*/
+    width: 100vw; /*qdo usar o position, precisa forçar a largura da tela toda*/
+    top: 0; /* para que o menu fique fixo na parte superior da tela*/
+    z-index: 1; /*para sobrepor as animações ou outros efeitos*/
+
+    display: grid; /* dividir o menu */
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center; 
+
+    border-top: 10px solid #0C528A;
+    border-bottom: 10px solid #0C528A;
+    padding: 10px;
+    font-size: larger;
+    
+}
+
+.menu a:hover {
+    background-color: #0C528A;
+}
+
+.banner {
+    /*  efeitos iniciais */
+    transform: scale(0.2) translateX(50vh); 
+    opacity: 0.5;
+    /* definir tempo de animação */
+    animation: linear 2s animaTitulo forwards;
+}
+@keyframes animaTitulo { /* criar o animaTitulo, pq ela ainda não existe */
+    0% {
+        /* considera os efeitos iniciais transform e opacity */
+    }
+    100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+}
+
+.titulo {
+    font-size: 5em;
+    font-family: 'Cantora One', sans-serif;
+    padding-bottom: 0.3em;
+}
+
+.subtitulo {
+    font-size: 2em;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+.sobre,
+.portifolio, 
+.contato { 
+    height: 100vh;
+    padding: 2em;
+    
+}
+
+.sobre h2,
+.portifolio h2,
+.contato h2 {
+    margin-bottom: 2em;
+    font-size: 2em;
+}
+
+#foto{
+    height: 15em;
+    width: auto;
+    
+    float: right; /* flutuação da imagem - quebra automática */
+    margin: 0em 3em;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.sobre p {
+    margin-bottom: 1em; /*espaçamento depois do paragrafo*/
+    padding: 0em 5em;
+    text-indent: 3em; /*identação "paragafo*/
+    text-align: justify; /*justificar o texto*/
+    font-size: larger;
+}
+
+a {
+    color: #f7f9f9;    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-right: 2em;
+}
+
+.grid a {
+    text-decoration: none;
+}
+.grid a:hover {
+    text-decoration: underline;
+}
+
+.item {
+    background-color:  #abb2b9 ;
+    margin: 20px;
+    color:  #154360;
+    border-top: 15px solid #0C528A;
+    border-radius: 5%;
+    width: 90%;
+    text-align: center;
+    padding-bottom: 1em;    
+}
+
+.gridIcones {
+    display: flex; 
+    justify-content: center; /* alinhamento horizontal */
+    gap: 3em;
+}
+
+.contato a {
+    color:  #d4e6f1;
+    font-size: 6em;
+
+    text-decoration: none;
+    transition: text-shadow 0.5s; /* transition para o efeito que está no contato a:hover*/
+}
+
+.contato a:hover {
+    text-shadow: 3px 3px 3px white;
+}
+
+footer p{
+    text-align: center;
+    padding-bottom: 10px;
+}
